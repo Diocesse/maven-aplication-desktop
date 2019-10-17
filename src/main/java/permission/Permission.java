@@ -2,7 +2,7 @@ package permission;
 
 public class Permission {
 
-    public String permisionAdmin(String acesso){
+    public static String permisionAdmin(String acesso){
        String permissoes[] = {"cadastros","consultas","relatorios","Pagamentos"};
         for (String p : permissoes) {
            if (acesso.equals(p)){
@@ -11,10 +11,10 @@ public class Permission {
         }
         return "negado";
     }
-    public void permisionPresidente(){
+    public static void permisionPresidente(){
 
     }
-    public void permisionSecrataria(){
+    public static void permisionSecrataria(){
 
     }
 }

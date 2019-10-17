@@ -27,13 +27,13 @@ public class Associate {
     private String sexo;
     @OneToOne
     @JoinColumn(nullable = false)
-    private Cargo cargo;
+    private Profission cargo;
 
-    public void setCargo(Cargo cargo) {
+    public void setCargo(Profission cargo) {
         this.cargo = cargo;
     }
 
-    public Cargo getCargo() {
+    public Profission getCargo() {
         return cargo;
     }
 

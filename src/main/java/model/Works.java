@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @SequenceGenerator(name = "seq_cargo", sequenceName = "seq_cargo",initialValue = 1 ,allocationSize = 1)
-public class Cargo {
+public class Works {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "seq_cargo")
     private long idCargo;
