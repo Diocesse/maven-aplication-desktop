@@ -1,0 +1,15 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+<AnchorPane fx:controller="controllers.HomeController"
+            xmlns:fx="http://javafx.com/fxml" >
+    <children>
+        <Label>Nome</Label>
+        <TextField fx:id="field" layoutX="30" layoutY="30"/>
+        <Button fx:id="ok" layoutX="60" layoutY="60"/>
+    </children>
+</AnchorPane>
