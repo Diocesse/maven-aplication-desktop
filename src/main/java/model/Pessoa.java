@@ -1,11 +1,13 @@
 package model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "consultar-pessoa-pelo-nome",query = "select p from Pessoa  p where p.user like :consulta")
+
+})
 public class Pessoa implements Serializable {
 
     @Id

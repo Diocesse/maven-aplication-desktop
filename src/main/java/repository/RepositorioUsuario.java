@@ -5,32 +5,19 @@ import model.Pessoa;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 import javax.transaction.Transaction;
+import java.util.List;
 
-public class RepositorioUsuario {
+public class RepositorioUsuario extends GenericoRepository<Pessoa> {
 
-    private ConfigJPAHibernate jpaHibernate;
-
-    public RepositorioUsuario() {
-     try {
-         jpaHibernate = (ConfigJPAHibernate) getClass().forName("config.ConfigJPAHibernate").newInstance();
-     }catch (Exception e){
-         System.out.println("Log -- > "+e.getLocalizedMessage());
-     }
-     }
-
-    public void save(Object ob){
-        EntityManager em = jpaHibernate.getManager();
-        EntityTransaction et = em.getTransaction();
-        et.begin();
-        em.persist(ob);
-        et.commit();
-    }
-
-    public static void main(String aths[]){
-        Pessoa p = new Pessoa();
-        p.setUser("ifba");
-        p.setPassword("ifba");
-        new RepositorioUsuario().save(p);
+    public List<Pessoa> filtrarPorNome (String nome){
+        try{
+            Query query = getConfigJPAHibernate().getManager().createNamedQuery("consultar-pessoa-pelo-nome");
+            query.setParameter("consulta","%"+nome+"%");
+            return query.getResultList();
+        }catch (Exception e){
+            return null;
+        }
     }
 }

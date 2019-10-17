@@ -18,19 +18,7 @@ public class ConfigJPAHibernate {
 
     public ConfigJPAHibernate() {
         factory = Persistence.createEntityManagerFactory("app-jpa");
-/*        manager = factory.createEntityManager();
-        Pessoa p = new Pessoa();
-        p.setUser("root");
-        p.setPassword("root");
-        manager.getTransaction().begin();
-        manager.persist(p);
-        manager.getTransaction().commit();
-
-        Query q = manager.createQuery("select p from Pessoa p where p.user like :valide");
-        q.setParameter("valide","root");
-        Pessoa pessoa =(Pessoa) q.getSingleResult();
-        System.out.println("User :"+pessoa.getUser() + " Passwd: "+pessoa.getPassword());
-   */ }
+ }
 
 
 }
